@@ -6,6 +6,14 @@ const[input, setInput] = useState({
     password:''
 })
 
+const handleChange = e =>{
+    e.presist();
+    setInput(input => ({
+        ...input,
+        [e.target.id]: e.target.value
+      }));
+}
+
     return(
         <div>
             <input
