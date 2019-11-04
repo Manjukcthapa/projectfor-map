@@ -1,15 +1,24 @@
 import React from "react";
 
 const SignUp = props => {
-    const [input, setInput] = useState({
-        name:"",
-        email:"",
-        password:"",
-        password2:""
-    })
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    password: "",
+    password2: ""
+  });
+
+  const handleChange = e => {
+    e.presist();
+    setInput(input => ({
+      ...input,
+      [e.target.id]: e.target.value
+    }));
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           id="name"
           type="text"
