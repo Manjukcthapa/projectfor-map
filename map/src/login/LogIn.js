@@ -1,6 +1,12 @@
 import React from "react";
 
 const SignUp = props => {
+    const [input, setInput] = useState({
+        name:"",
+        email:"",
+        password:"",
+        password2:""
+    })
   return (
     <div>
       <form>
@@ -10,6 +16,8 @@ const SignUp = props => {
           name="name"
           label="Password"
           placeholder="name"
+          value={input.name}
+          onchange={handleChange}
         />
         <input
           id="email"
@@ -17,6 +25,8 @@ const SignUp = props => {
           label="Email"
           name="email"
           placeholder="email"
+          value={input.email}
+          onchange={handleChange}
         />
         <input
           id="password"
@@ -24,13 +34,17 @@ const SignUp = props => {
           label="Password"
           name="password"
           placeholder="password"
+          value={input.password}
+          onchange={handleChange}
         />
         <input
           id="password2"
           name="password2"
           type="password"
           label="Conform password"
-          placeholder="password"
+          placeholder="confirm password"
+          value={input.password2}
+          onchange={handleChange}
         />
         <button>Register</button>
       </form>
