@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SignUp from './Auth/SignUp'
+import LogIn from './Auth/LogIn'
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
      <SignUp/>
+     <LogIn/>
       </div>
     );
   }

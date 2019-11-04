@@ -11,11 +11,21 @@ const handleChange = e =>{
     setInput(input => ({
         ...input,
         [e.target.id]: e.target.value
-      }));
+      }
+      
+      
+      ));
+}
+
+const handleSubmit = e => {
+    e.preventdefault();
+    
+
 }
 
     return(
         <div>
+            <form onSubmit={handleSubmit}>
             <input
               id="email"
               type="text"
@@ -33,6 +43,7 @@ const handleChange = e =>{
               value={input.password}
               onchange={handleChange}/>
             <button>Sign In</button>
+            </form>
         </div>
     )
 }
